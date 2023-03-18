@@ -47,5 +47,7 @@
 
 ## 프로젝트 실행방법
 Maven 빌드 환경에 Java로 작성된 SpringBoot 애플리케이션 실행
-![image](https://user-images.githubusercontent.com/90014589/226075707-4eb2a884-ef9c-4bb1-9209-217e288b7c3a.png)
+
+![image](https://user-images.githubusercontent.com/90014589/226075737-211f9a4c-787e-48a8-92f1-e0e2a793fb71.png)
+프로젝트를 마우스 우클릭하여 Run As > Spring Boot App을 클릭
 
