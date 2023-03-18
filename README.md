@@ -54,10 +54,7 @@
 (Alt + Shift + X 버튼을 누른 후 B버튼)
 
 <br>
-<br>
-<br>
 2. 접속  http://localhost:8080/
-3. 
 ![image](https://user-images.githubusercontent.com/90014589/226076158-99e36ae0-a787-4456-bafc-16fb07d8d334.png)
 <br>
 
