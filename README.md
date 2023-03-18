@@ -54,7 +54,7 @@ Maven 빌드 환경에 Java로 작성된 SpringBoot 애플리케이션 실행
 (Alt + Shift + X 버튼을 누른 후 B버튼)
 
 <br>
-![20230318_102841](https://user-images.githubusercontent.com/90014589/226075963-88c7071a-c898-4651-ba5e-53c0472ee8f1.png)
+![image](https://user-images.githubusercontent.com/90014589/226075963-88c7071a-c898-4651-ba5e-53c0472ee8f1.png)
 <br>
 접속  http://localhost:8080/
 
