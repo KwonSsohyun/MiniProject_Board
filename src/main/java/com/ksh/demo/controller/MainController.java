@@ -85,22 +85,16 @@ public class MainController {
 			vo.setBoardIdx(1);
 		}
 		
-		// ▶ 서비스단 호출
-		//   → 기존 값 읽어온다. 왜? 인덱스 맨 끝 넣어주기 위함
 		ArrayList<BoardVO> rows = postService.readPostSvc();
 		
-		if(rows.size() > 0) { // 게시글 번호 늘이기
+		if(rows.size() > 0) { 
 			int postNumber = rows.size() + 1;
 			vo.setBoardIdx(postNumber);
 		}
 		String data =  postService.createDataSet(vo);
 		 
-		// ▶ 서비스단 호출
-		//   → 사용자가 입력한 새글 DB에 넣는다.
 		postService.createPostSvc(data);
 		 
-		// ▶ 서비스단 호출
-		//   → 지금 사용자가 새글 적은것까지 리스트에 보여져야 되니까 다시 가져온다.
 		rows = postService.readPostSvc();
 		 
 		modelview.addObject("postList",rows);

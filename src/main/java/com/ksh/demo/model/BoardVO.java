@@ -1,22 +1,24 @@
 package com.ksh.demo.model;
-
+/**
+ * 
+ * @author 권소현
+ * @variable boardIdx 인덱스
+ * @variable boardNick 닉네임
+ * @variable boardTitle 타이틀
+ * @variable boardText 본문
+ * @variable boardCheck 중요 게시물 체크
+ */
 public class BoardVO {
 	
-	// 인덱스
 	private Integer boardIdx;
 	
-	// 닉네임
 	private String boardNick;
 	
-	// 타이틀
 	private String boardTitle;
 	
-	// 본문
 	private String boardText;
 	
-	// 중요 게시물 체크
 	private String boardCheck;
-	
 	
 	public BoardVO(Integer boardIdx, String boardNick, String boardTitle, String boardText, String boardCheck) {
 		this.boardIdx = boardIdx;

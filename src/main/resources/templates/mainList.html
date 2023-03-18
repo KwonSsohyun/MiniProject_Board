@@ -12,15 +12,11 @@
     </style>
     <script>
     	window.onload=function(){
-			//실행할 내용
-			// console.log('test');
-    	  
-			// 02. 검색 영역 ▶ 검색 빈값일 시 안넘기기
 			document.getElementById("searchList").addEventListener("submit", function(e){
 	            let msgEle = document.getElementById("searchKeyword");
-	            if(msgEle.value.length == 0) {  // 입력값 없는 경우
+	            if(msgEle.value.length == 0) {
 	                alert('검색값을 입력해주세요.');
-	                e.preventDefault();	// 여기서 이벤트 중단
+	                e.preventDefault();
 	            }
 	        });
     	}
@@ -67,7 +63,7 @@
 				<th width="20%">중요 게시글 여부</th>
 			</tr>
 			<tr th:each="post: ${postList}" th:style="${post.boardCheck == 'Y'} ? 'background-color: yellow;' : ''">
-				<td class="hidden-col" th:text="${post.boardIdx}"></td> <!-- 인덱스 -->
+				<td class="hidden-col" th:text="${post.boardIdx}"></td>
 				<td th:text="${post.boardNick}"></td>
 				<td>
     				<a th:href="@{/updateForm/{boardIdx}(boardIdx=${post.boardIdx})}" th:text="${post.boardTitle}"></a>

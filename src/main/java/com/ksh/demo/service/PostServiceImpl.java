@@ -24,21 +24,21 @@ public class PostServiceImpl {
 	static final String folderPath = "document";
 	static final String filePath = "document/post.txt";
 	
-	// 폴더 상태 체크
+
 	FolderStatus folderResult;
-	// 텍스트 파일 상태 체크
+
 	TextFileStatus fileResult;
 	
 	// ▶ 폴더 생성 되었는지 상태
 	enum FolderStatus {
-		EMPTY,		// 생성이 안되어 있는 default 상태
-		ALREADY		// 이미 폴더 생성 되어있는 상태
+		EMPTY,		
+		ALREADY		
 	}
 
 	// ▶ 텍스트 파일이 생성 되었는지 상태
 	enum TextFileStatus {
-		EMPTY,		// 생성이 안되어 있는 default 상태
-		ALREADY		// 이미 파일이 생성 되어있는 상태
+		EMPTY,	
+		ALREADY	
 	}
 	
 	/**
@@ -51,22 +51,16 @@ public class PostServiceImpl {
 		boolean result = false;
 		TextFileStatus fileStatus = createTextFile();
 		
-		// ALREADY ▶ 이미 파일 생성되어있는 상태 
 		if (fileStatus.equals(TextFileStatus.ALREADY)) {
 			try {
-				// → 생성할 파일의 경로 및 파일명 으로 File 객체 생성
 				File file = new File(filePath);
-			
-				// → FileOutputStream : 데이터를 파일에 바이트 스트림으로 저장하기 위해 사용한다.
-				// → FileOutputStream(String fileName, boolean append) : 기존 파일에 내용을 추가 할려면 두번째 인자로 true를 적어 준다. true를 추가해도 없으면 만든다.
+							
 				FileOutputStream f = new FileOutputStream(file, true);
 				String lineToAppend = data + "\r\n";
 
-				// → 문자열을 바이트배열로 변환해서 파일에 저장한다.
 				byte[] byteArr = lineToAppend.getBytes();
 				f.write(byteArr);
 				
-				// → 사용이 끝나면 파일 스트림을 닫는다.
 				f.close();
 				result = true;
 	    	} catch (IOException e) {
@@ -88,23 +82,11 @@ public class PostServiceImpl {
 		TextFileStatus fileStatus = createTextFile();
 
 		if (fileStatus.equals(TextFileStatus.ALREADY)) {
-			// BufferedReader ▶ 버퍼를 이용한 입력
-			// FileReader ▶ 텍스트 파일을 읽기 위한 것
 			try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
-				
 				String line;
-				
 				while ((line = br.readLine()) != null) {
-					// ▶ 자바 split으로 "|" 문자 자르기
-					//   → 해결방법은 "\\|" 로 자르는것이다.
 					String[] temp = line.split("\\|");
-					
-					// ▶ VO객체의 boardIdx의 값이 null일 경우 분기처리
 					Integer boardIdx = Integer.parseInt(temp[0]);
-					
-					// ▶ 객체 rows에 한줄한줄 읽어온거 넣는다.
-					//   BoardVO(int boardIdx, String boardNick, String boardTitle, String boardText, String boardCheck) 해당 순서에 맞게 넣는다.
-					//   Integer.parseInt(String s) ▶ 문자열을 숫자로 변환시킴
 					rows.add(new BoardVO(boardIdx, temp[1], temp[2], temp[3], temp[4]));
 				} 
 			} catch (IOException e) {
@@ -126,20 +108,13 @@ public class PostServiceImpl {
 		TextFileStatus fileStatus = createTextFile();
 
 		if (fileStatus.equals(TextFileStatus.ALREADY)) {
-			// BufferedReader ▶ 버퍼를 이용한 입력
-			// FileReader ▶ 텍스트 파일을 읽기 위한 것
 			try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
 				
 				String line;
 				
 				while ((line = br.readLine()) != null) {
-					// ▶ 자바 split으로 "|" 문자 자르기
-					//   → 해결방법은 "\\|" 로 자르는것이다.
 					String[] temp = line.split("\\|");
-					
-					// ▶ VO객체의 boardIdx의 값이 null일 경우 분기처리
 					Integer boardIdx = Integer.parseInt(temp[0]);
-					
 	                if (boardIdx.equals(vo.getBoardIdx())) {
 	                    board = new BoardVO(boardIdx, temp[1], temp[2], temp[3], temp[4]);
 	                    break;
@@ -162,17 +137,14 @@ public class PostServiceImpl {
 	    List<String> lines;
 	    
 	    try {
-	    	// Files.readAllLines ▶ 파일의 모든 줄을 읽어온다.
 	        lines = Files.readAllLines(filePath, Charset.forName("UTF-8"));
 
 	        if (lines.isEmpty()) {
 	            return "";
 	        } else {
-	        	// lines.size() - 1 ▶ 파일에서 읽은 데이터의 마지막 줄을 읽기 위함이다.
-	        	//                    ex) 인덱스는 0부터 세니까 | 2개가 담겨있으면 size는 2이다. | 2-1 하면 [1] 인 2번째 마지막 가져온다.
 	            String lastLine = lines.get(lines.size() - 1);
 	            String[] fields = lastLine.split("\\|");
-	            return fields[1]; // 닉네임 넣어서 보낸다.
+	            return fields[1];
 	        }
 
 	    } catch (IOException e) {
@@ -186,24 +158,15 @@ public class PostServiceImpl {
 	 * @name 게시글 수정
 	 */
 	public void updatePostRowSvc(BoardVO vo) {
-		
-		// 기존에 저장되어 있는 게시글 파일을 읽어서 수정하고, 다시 파일에 쓰는 작업이 필요
-		// StringBuilder와 BufferedReader, BufferedWriter를 사용하여 해당 작업을 수행하도록 코드를 작성
-	    
 	    File file = new File(filePath);
-	    // 수정된 게시글을 저장할 StringBuilder 객체 sb를 선언
 	    StringBuilder sb = new StringBuilder();
 	    
-	    // ▶ BufferedReader와 BufferedWriter 사용
 	    try (BufferedReader br = new BufferedReader(new FileReader(file))) {
-	    	// BufferedReader를 사용하여 게시글 파일을 읽으면서, 기존 게시글에서 수정 대상 게시글을 찾으면 sb 객체에 수정된 게시글을 추가
 	        String line;
 
 	        while ((line = br.readLine()) != null) {
 	            String[] temp = line.split("\\|");
-
 	            Integer boardIdx = Integer.parseInt(temp[0]);
-	           
 	            if (boardIdx == vo.getBoardIdx()) {
 	                sb.append(vo.getBoardIdx()).append("|")
 	                  .append(vo.getBoardNick()).append("|")
@@ -282,12 +245,12 @@ public class PostServiceImpl {
 	            String line;
 	            while ((line = br.readLine()) != null) {
 	                String[] temp = line.split("\\|");
-	                if (option.equals("타이틀")) { // 수정된 부분
-	                    if (temp[2].contains(keyword)) { // 제목으로 검색
+	                if (option.equals("타이틀")) { 
+	                    if (temp[2].contains(keyword)) { 
 	                        rows.add(new BoardVO(Integer.parseInt(temp[0]), temp[1], temp[2], temp[3], temp[4]));
 	                    }
 	                } else if (option.equals("닉네임")) {
-	                    if (temp[1].contains(keyword)) { // 닉네임으로 검색
+	                    if (temp[1].contains(keyword)) { 
 	                        rows.add(new BoardVO(Integer.parseInt(temp[0]), temp[1], temp[2], temp[3], temp[4]));
 	                    }
 	                }
@@ -332,10 +295,9 @@ public class PostServiceImpl {
 	public FolderStatus createFolder() {
 		File Folder = new File(folderPath);
 
-		// 해당 디렉토리가 없을경우 디렉토리를 생성합니다.
 		if (!Folder.exists()) {
 			try{
-			    Folder.mkdir(); //폴더 생성합니다.
+			    Folder.mkdir();
 			    System.out.println("폴더 생성");
 			    folderResult = FolderStatus.ALREADY;
 	        } catch(Exception e){

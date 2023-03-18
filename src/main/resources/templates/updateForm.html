@@ -12,10 +12,10 @@
 		// 01. 새글 쓰기 영역 ▶ 빈값일 시 안넘기기
            function updateWrite(){
 				let boardNick = document.getElementById('boardNick');			// 닉네임
-				let boardTitle = document.getElementById('boardTitle');		// 타이틀
-				let boardText = document.getElementsByName('boardText')[0];	// 본문
-				let boardCheckCheckbox = document.getElementById('boardCheckCheckbox'); // 중요 게시물 체크 여부
-				let boardCheck = document.getElementsByName('boardCheck')[0];			  // 중요 게시물 체크 여부
+				let boardTitle = document.getElementById('boardTitle');			// 타이틀
+				let boardText = document.getElementsByName('boardText')[0];		// 본문
+				let boardCheckCheckbox = document.getElementById('boardCheckCheckbox'); 	// 중요 게시물 체크 여부
+				let boardCheck = document.getElementsByName('boardCheck')[0];			  	// 중요 게시물 체크 여부
                
 				// 빈 값 확인
 				if (boardNick.value.trim() === '' || boardTitle.value.trim() === '' || boardText.value.trim() === '') {
@@ -40,7 +40,7 @@
     </script>
 </head>
 <body>
-	<h1>게시글 수정 및 조회</h1>
+	<h1>게시글 수정 / 삭제</h1>
 	
 	<!-- 01. 새글 쓰기 영역 ▶ start -->
 	<div>
