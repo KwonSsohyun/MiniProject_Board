@@ -46,8 +46,7 @@
 ---
 
 ## 프로젝트 실행방법
-<img width="25" alt="star1" src="https://user-images.githubusercontent.com/78655692/151471925-e5f35751-d4b9-416b-b41d-a059267a09e3.png">
-**1. Maven 빌드 환경에 Java로 작성된 SpringBoot 애플리케이션 실행**
+<img width="25" alt="star1" src="https://user-images.githubusercontent.com/78655692/151471925-e5f35751-d4b9-416b-b41d-a059267a09e3.png">**1. Maven 빌드 환경에 Java로 작성된 SpringBoot 애플리케이션 실행**
 <br>
 <span style="font-size:20%">프로젝트를 마우스 우클릭하여 Run As > Spring Boot App을 클릭</span>
 <span style="font-size:20%">(Alt + Shift + X 버튼을 누른 후 B버튼)</span>  
