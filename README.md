@@ -53,3 +53,6 @@ Maven 빌드 환경에 Java로 작성된 SpringBoot 애플리케이션 실행
 프로젝트를 마우스 우클릭하여 Run As > Spring Boot App을 클릭
 (Alt + Shift + X 버튼을 누른 후 B버튼)
 
+![image](https://user-images.githubusercontent.com/90014589/226075890-7421c9f3-7a8d-49cf-8a59-7adee6df2abe.png)
+http://localhost:8080/
+
