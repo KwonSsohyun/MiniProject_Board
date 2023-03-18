@@ -46,7 +46,7 @@
 ---
 
 ## 프로젝트 실행방법
-1. Maven 빌드 환경에 Java로 작성된 SpringBoot 애플리케이션 실행
+**1. Maven 빌드 환경에 Java로 작성된 SpringBoot 애플리케이션 실행
 - 프로젝트를 마우스 우클릭하여 Run As > Spring Boot App을 클릭
   (Alt + Shift + X 버튼을 누른 후 B버튼)
 
@@ -55,7 +55,7 @@
 
 
 <br>
-2. 접속  http://localhost:8080/ <br>
+**2. 접속  http://localhost:8080/ <br>
 <img width="65%" src="https://user-images.githubusercontent.com/90014589/226076303-908fadde-1725-4235-a3a5-9c19e47e03d5.png"/>
 
 
