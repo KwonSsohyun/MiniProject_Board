@@ -8,7 +8,7 @@ IDE: STS(Spring Tool Suite)<br>
 View Template: Thymeleaf<br>
 
 
-개발 순서
+### 개발 순서
 1. 개발 환경 세팅
 2. 프로젝트 생성
 3. 게시판 리스트 (+ 중요게시글 BG-Color 적용)
