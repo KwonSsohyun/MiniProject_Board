@@ -51,7 +51,7 @@
 ###### 프로젝트를 마우스 우클릭하여 Run As > Spring Boot App을 클릭 (Alt + Shift + X 버튼을 누른 후 B버튼)
 
 <img width="65%" src="https://user-images.githubusercontent.com/90014589/226075737-211f9a4c-787e-48a8-92f1-e0e2a793fb71.png"/>
-
+<br><br>
 
 <img width="15" alt="star1" src="https://user-images.githubusercontent.com/78655692/151471925-e5f35751-d4b9-416b-b41d-a059267a09e3.png">  **2. 접속 ▶ http://localhost:8080/**
 <br>
