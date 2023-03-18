@@ -55,7 +55,7 @@
 
 
 <br>
-**2. 접속**
+**2. Maven 빌드 환경에 Java로 작성된 SpringBoot 애플리케이션 실행**
 <br>
 <img width="65%" src="https://user-images.githubusercontent.com/90014589/226076303-908fadde-1725-4235-a3a5-9c19e47e03d5.png"/>
 
