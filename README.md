@@ -56,6 +56,6 @@
 
 <br>
 2. 접속  http://localhost:8080/ <br>
-<img width="80%" src="https://user-images.githubusercontent.com/90014589/226076303-908fadde-1725-4235-a3a5-9c19e47e03d5.png"/>
+<img width="50%" src="https://user-images.githubusercontent.com/90014589/226076303-908fadde-1725-4235-a3a5-9c19e47e03d5.png"/>
 
 
