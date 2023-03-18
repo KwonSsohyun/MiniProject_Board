@@ -1,10 +1,10 @@
 ## Spring Boot 게시판 구현
 
 ### 기술 스택
-- 개발언어: JAVA<br>
-- 프레임워크: Spring Boot<br>
-- IDE: STS(Spring Tool Suite)<br>
-- View Template: Thymeleaf<br>
+- 개발언어 : JAVA<br>
+- 프레임워크 : Spring Boot<br>
+- IDE : STS(Spring Tool Suite)<br>
+- View Template : Thymeleaf<br>
 
 
 ### 개발 순서
@@ -16,7 +16,7 @@
 6. 게시글 삭제
 7. 게시글 검색 (+타이틀 / 닉네임)
 
-
+---
 
 ## 설명
 1. DB를 사용하지 않고 게시판을 구현했습니다.
