@@ -52,7 +52,7 @@
 
 <img width="65%" src="https://user-images.githubusercontent.com/90014589/226075737-211f9a4c-787e-48a8-92f1-e0e2a793fb71.png"/>
 
-**2. Maven 빌드 환경에 Java로 작성된 SpringBoot 애플리케이션 실행**
+**2. 접속 ▶ http://localhost:8080/**
 <br>
 <img width="65%" src="https://user-images.githubusercontent.com/90014589/226076303-908fadde-1725-4235-a3a5-9c19e47e03d5.png"/>
 
