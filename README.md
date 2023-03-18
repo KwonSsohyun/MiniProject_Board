@@ -1,11 +1,10 @@
 ## Spring Boot 게시판 구현
 -------
 ### 기술 스택
-
-개발언어: JAVA<br>
-프레임워크: Spring Boot<br>
-IDE: STS(Spring Tool Suite)<br>
-View Template: Thymeleaf<br>
+- 개발언어: JAVA<br>
+- 프레임워크: Spring Boot<br>
+- IDE: STS(Spring Tool Suite)<br>
+- View Template: Thymeleaf<br>
 
 
 ### 개발 순서
