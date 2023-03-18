@@ -19,7 +19,6 @@
 
 ## 디렉토리 구조
 ```
-.
 ├── src/main/java
 │   ├── com.ksh.demo
 │   │   ├── controller
