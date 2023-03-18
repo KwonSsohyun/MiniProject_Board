@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>게시판 리스트</title>    
+    <style>
+    	.table {
+   			border-collapse: separate;
+   			border-spacing: 10px 10px;
+ 		}
+ 		.hidden-col { display: none; }
+    </style>
+    <script>
+    	window.onload=function(){
+			//실행할 내용
+			// console.log('test');
+    	  
+			// 02. 검색 영역 ▶ 검색 빈값일 시 안넘기기
+			document.getElementById("searchList").addEventListener("submit", function(e){
+	            let msgEle = document.getElementById("searchKeyword");
+	            if(msgEle.value.length == 0) {  // 입력값 없는 경우
+	                alert('검색값을 입력해주세요.');
+	                e.preventDefault();	// 여기서 이벤트 중단
+	            }
+	        });
+    	}
+    	
+        function goToPage(url) {
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body>
+<h1>게시판 전체글 조회</h1>
+
+<!-- 01. 새글 쓰기 영역 ▶ start -->
+<div style = "padding: 0px 0px 10px 0px;">
+	<button th:onclick="|location.href='@{/insertForm}'|">글쓰기</button>
+</div>
+<!-- 01. 새글 쓰기 영역 ▶ end -->
+
+
+
+<!-- 02. 검색 영역 ▶ start -->
+<div style = "padding: 0px 0px 20px 0px;">
+	<form id="searchList" th:action="@{/searchList}" method="get">
+		<select name="searchOption">
+			<option value="타이틀">타이틀</option>
+			<option value="닉네임">닉네임</option>
+	     </select>
+		<input id="searchKeyword" type="text" name="searchKeyword">
+	    <button type="submit">검색</button>
+	    <button type="button" onclick="goToPage('/')">전체글 보기</button>
+	</form>
+</div>
+<!-- 02. 검색 영역 ▶ end -->
+
+
+
+<!-- 03. 게시글 조회 리스트 영역 ▶ start -->
+<div style = "padding: 0px 0px 10px 0px;">
+	<form action="createBoard" method="get">
+		<table border="1">
+			<tr>
+				<th width="25%">닉네임</th>
+				<th width="55%">타이틀</th>
+				<th width="20%">중요 게시글 여부</th>
+			</tr>
+			<tr th:each="post: ${postList}" th:style="${post.boardCheck == 'Y'} ? 'background-color: yellow;' : ''">
+				<td class="hidden-col" th:text="${post.boardIdx}"></td> <!-- 인덱스 -->
+				<td th:text="${post.boardNick}"></td>
+				<td>
+    				<a th:href="@{/updateForm/{boardIdx}(boardIdx=${post.boardIdx})}" th:text="${post.boardTitle}"></a>
+				</td>
+				<td th:text="${post.boardCheck}"></td>
+			</tr>
+		</table>
+	</form>
+</div>
+<!-- 03. 게시글 조회 리스트 영역 ▶ end -->
+</body>
+</html>
