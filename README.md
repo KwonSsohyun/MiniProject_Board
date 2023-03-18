@@ -16,6 +16,20 @@
 6. 게시글 삭제
 7. 게시글 검색 (+타이틀 / 닉네임)
 
+## 디렉토리 구조
+```
+.
+├── app.js
+├── routes
+│   ├── index.js
+│   ├── comments.js
+│   └── posts.js
+└── schemas
+    ├── index.js
+    ├── comment.js
+    └── post.js
+```
+
 ---
 
 ## 설명
